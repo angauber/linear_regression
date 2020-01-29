@@ -1,3 +1,4 @@
+```
 usage: learn.py [-h] [-r RATE] [-e EPOCH] [-v] dataset
 
 positional arguments:
@@ -9,3 +10,4 @@ optional arguments:
   -e EPOCH, --epoch EPOCH
                         set the epoch number, default: 4
   -v, --visualise       get a visual feedback
+```
