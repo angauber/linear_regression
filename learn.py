@@ -73,9 +73,8 @@ def visualise(data, a, b):
     ax.scatter(data['xSet'], data['ySet'])
     ax.set_xlabel(data['dataName'][0])
     ax.set_ylabel(data['dataName'][1])
-    ax.set_title("point visualisation")
 
-    x = linspace(npArray(data['xSet']).min(), npArray(data['xSet']).max(), 100)
+    x = linspace(npArray(data['xSet']).min() - 5, npArray(data['xSet']).max() + 5, 100)
     y = (a * x) + b
     ax.plot(x, y, '-r')
 
