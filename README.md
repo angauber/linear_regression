@@ -1,5 +1,14 @@
+## machine learning algorithm to calculate line equation from dataset with linear regression and gradent descent
+
+### Dependancies
+* Python 3
+* numpy
+* matplotlib
+
+Start by training your model by providing it your datatset to `learn.py`
+
 ```
-usage: learn.py [-h] [-r RATE] [-e EPOCH] [-v] dataset
+usage: learn.py [-h] [-r RATE] [-e EPOCH] [-v] [-ve] dataset
 
 positional arguments:
   dataset               your dataset file in csv format
@@ -10,4 +19,11 @@ optional arguments:
   -e EPOCH, --epoch EPOCH
                         set the epoch number, default: 4
   -v, --visualise       get a visual feedback
+  -ve, --verror         visualise error evolution
 ```
+
+Then use `estimate.py` to estimate values based on the previously computed line equation
+
+## Visual results
+[screen 1](/screenshots/screenshot_1.png?raw=true)
+[screen 2](/screenshots/screenshot_2.png?raw=true)
