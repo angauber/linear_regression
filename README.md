@@ -1,4 +1,4 @@
-## machine learning algorithm to calculate line equation from dataset with linear regression and gradent descent
+machine learning algorithm to calculate line equation from a dataset with linear regression and gradient descent
 
 ### Dependancies
 * Python 3
@@ -25,5 +25,5 @@ optional arguments:
 Then use `estimate.py` to estimate values based on the previously computed line equation
 
 ## Visual results
-[screen 1](/screenshots/screenshot_1.png?raw=true)
-[screen 2](/screenshots/screenshot_2.png?raw=true)
+[screen 1](screenshots/screenshot_1.png?raw=true)
+[screen 2](screenshots/screenshot_2.png?raw=true)
