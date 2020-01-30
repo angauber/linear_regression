@@ -72,7 +72,6 @@ def compute(data):
     writeLog(a, b)
 
 def visualiseError(stack):
-    print(len)
     pyplot.plot(stack)
     pyplot.xlabel("epoch")
     pyplot.ylabel("error")
