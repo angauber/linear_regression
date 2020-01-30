@@ -41,7 +41,7 @@ def writeLog(a, b):
 
 def compute(data):
     m = len(data['xSet'])
-
+    errStack = []
     a = 0.0
     b = 0.0
     xArr = data['xSet']
@@ -50,8 +50,10 @@ def compute(data):
     for e in range(args.epoch):
         try:
             computedY = [((a * x) + b) for x in xArr]
-    
             cost = (1/ (2 * m)) * (sum([computedY[i] - yArr[i] for i in range(m)]) ** 2)
+
+            if args.verror == True:
+                errStack.append(cost)
 
             bGrad = (1 / m) * sum([(computedY[i] - yArr[i]) for i in range(m)])
             aGrad = (1 / m) * sum([(xArr[i] * (computedY[i] - yArr[i])) for i in range(m)])
@@ -62,9 +64,21 @@ def compute(data):
             exit("To large value encountered. exiting")
     if args.visualise:
         visualise(data, a, b)
+    if args.verror:
+        visualiseError(errStack)
+
     print("error: "+str(cost))
     print("y = "+str(a)+" x + "+str(b))
     writeLog(a, b)
+
+def visualiseError(stack):
+    print(len)
+    pyplot.plot(stack)
+    pyplot.xlabel("epoch")
+    pyplot.ylabel("error")
+    pyplot.axis([0, args.epoch, 0, stack[0]])
+    pyplot.grid()
+    pyplot.show()
 
 def visualise(data, a, b):
     figure = pyplot.figure()
@@ -87,6 +101,7 @@ if __name__ == "__main__":
     parser.add_argument("-r", "--rate", type=float, default="0.0001", help="set the learning rate, defaul: 0.01")
     parser.add_argument("-e", "--epoch", type=int, default="1000", help="set the epoch number, default: 4")
     parser.add_argument("-v", "--visualise", action="store_true", help="get a visual feedback")
+    parser.add_argument("-ve", "--verror", action="store_true", help="visualise error evolution")
     global args
 
     args = parser.parse_args()
