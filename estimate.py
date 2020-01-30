@@ -10,8 +10,8 @@ if __name__ == "__main__":
         exit("wrong number of variable provided in log file")
     if not isFloat(data[0]) or not isFloat(data[1]):
         exit("wrong format found in log file")
-    b = float(data[1])
-    a = float(data[0])
+    b = float(data[0])
+    a = float(data[1])
 
     while True:
         x = input("Provide a value for x: ")
